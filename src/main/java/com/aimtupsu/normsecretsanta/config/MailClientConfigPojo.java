@@ -9,6 +9,7 @@ record MailClientConfigPojo(String login,
                             String host,
                             String port,
                             String socketPort,
+                            String emailImagePath,
                             boolean debug) implements MailClientConfig {
 
     /**
@@ -45,6 +46,11 @@ record MailClientConfigPojo(String login,
     @Override
     public boolean isDebugActive() {
         return debug;
+    }
+
+    @Override
+    public String getEmailImagePath() {
+        return emailImagePath;
     }
 
     @SuppressWarnings("java:S5527")

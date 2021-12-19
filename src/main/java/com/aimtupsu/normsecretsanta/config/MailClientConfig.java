@@ -12,5 +12,7 @@ public interface MailClientConfig {
 
     boolean isDebugActive();
 
+    String getEmailImagePath();
+
     Properties getProperties();
 }
