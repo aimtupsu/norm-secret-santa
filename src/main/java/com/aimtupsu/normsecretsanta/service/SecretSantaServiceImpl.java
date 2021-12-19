@@ -13,11 +13,12 @@ import java.util.Random;
 import java.util.Set;
 
 @RequiredArgsConstructor
-public class SecretSantaServiceImpl implements SecretSantaService {
+class SecretSantaServiceImpl implements SecretSantaService {
 
     private final Random random = new Random();
     private final SecretSantaConfig secretSantaConfig;
     private final MailClient mailClient;
+    private final TemplateService templateService;
 
     @Override
     public void sendOutInvitations() {
@@ -76,9 +77,8 @@ public class SecretSantaServiceImpl implements SecretSantaService {
     }
 
     private void sendMailToParticipant(SecretSantaParticipant giving, SecretSantaParticipant receiving) {
-        mailClient.sendMail(giving.email(),
-                "Привет! Готовь подарок для: " + receiving.name() + ". " +
-                        "Кто дарит: " + giving + ". Кому дарят: " + receiving);
+        final String filledEmailMessage = templateService.getFilledEmailMessage(giving, receiving);
+        mailClient.sendHtmlMail(giving.email(), filledEmailMessage);
     }
 
 }

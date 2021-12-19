@@ -24,7 +24,13 @@ public class ServiceFactory {
     private SecretSantaService createSecretSantaService() {
         final SecretSantaConfig secretSantaConfig = ConfigLoadFactory.INSTANCE.loadSecretSantaConfig();
         final MailClient mailClient = MailClientFactory.INSTANCE.getMailClient();
-        return new SecretSantaServiceImpl(secretSantaConfig, mailClient);
+        final TemplateService templateService = createTemplateService();
+        return new SecretSantaServiceImpl(secretSantaConfig, mailClient, templateService);
+    }
+
+    private TemplateService createTemplateService() {
+        final SecretSantaConfig secretSantaConfig = ConfigLoadFactory.INSTANCE.loadSecretSantaConfig();
+        return new TemplateServiceImpl(secretSantaConfig);
     }
 
 }

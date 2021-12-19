@@ -4,4 +4,5 @@ auth: true
 host: "smtp.mail.com"
 port: 465
 socketPort: 465
+emailImagePath: "src/main/resources/templates/secret-santa-invite.jpeg"
 debug: true

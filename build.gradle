@@ -27,6 +27,9 @@ dependencies {
     implementation "com.sun.mail:javax.mail:1.6.2"
     implementation "javax.mail:javax.mail-api:1.6.2"
 
+    // Thymeleaf
+    implementation 'org.thymeleaf:thymeleaf:3.0.14.RELEASE'
+
     // Test
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
