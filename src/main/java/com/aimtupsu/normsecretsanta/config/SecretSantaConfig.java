@@ -2,10 +2,10 @@ package com.aimtupsu.normsecretsanta.config;
 
 import com.aimtupsu.normsecretsanta.model.SecretSantaParticipant;
 
-import java.util.List;
+import java.util.Set;
 
 public interface SecretSantaConfig {
 
-    List<SecretSantaParticipant> getParticipants();
+    Set<SecretSantaParticipant> getParticipants();
 
 }

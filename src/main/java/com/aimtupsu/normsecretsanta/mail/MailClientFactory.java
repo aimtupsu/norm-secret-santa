@@ -1,5 +1,6 @@
 package com.aimtupsu.normsecretsanta.mail;
 
+import com.aimtupsu.normsecretsanta.config.ConfigLoadFactory;
 import com.aimtupsu.normsecretsanta.config.MailClientConfig;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -15,16 +16,17 @@ public class MailClientFactory {
 
     private MailClient mailClient;
 
-    public MailClient getMailClient(final MailClientConfig config) {
+    public MailClient getMailClient() {
         if (this.mailClient == null) {
-            this.mailClient = createMailClient(config);
+            this.mailClient = createMailClient();
         }
         return this.mailClient;
     }
 
-    private MailClient createMailClient(final MailClientConfig config) {
-        final Session session = createSession(config);
-        return new SimpleMailClient(session, config);
+    private MailClient createMailClient() {
+        final MailClientConfig mailClientConfig = ConfigLoadFactory.INSTANCE.loadMailClientConfig();
+        final Session session = createSession(mailClientConfig);
+        return new SimpleMailClient(session, mailClientConfig);
     }
 
     private Session createSession(final MailClientConfig config) {

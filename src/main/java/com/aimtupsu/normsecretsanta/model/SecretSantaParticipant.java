@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
  * Info about Secret Santa participant.
  * Any participant has a name and email.
  */
-public record SecretSantaParticipant(String name, String email) {
+public record SecretSantaParticipant(int id, String name, String email, Integer prohibition) {
 
     /**
      * Simple regex for Email validation.
