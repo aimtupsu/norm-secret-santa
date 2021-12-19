@@ -22,6 +22,11 @@ dependencies {
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.13.0'
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.0'
 
+    // Email
+    implementation "com.sun.activation:javax.activation:1.2.0"
+    implementation "com.sun.mail:javax.mail:1.6.2"
+    implementation "javax.mail:javax.mail-api:1.6.2"
+
     // Test
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'

@@ -1,0 +1,7 @@
+login: "example@mail.com"
+pass: "password"
+auth: true
+host: "smtp.mail.com"
+port: 465
+socketPort: 465
+debug: true
