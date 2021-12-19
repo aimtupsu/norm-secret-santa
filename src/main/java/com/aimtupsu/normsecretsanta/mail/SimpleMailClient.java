@@ -23,7 +23,7 @@ public class SimpleMailClient implements MailClient {
             final MimeMessage message = new MimeMessage(session);
             message.setFrom(config.getFromEmail());
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(to));
-            message.setSubject("Secret Santa Test");
+            message.setSubject("Shhhh..........It's Secret Santa!");
             message.setText(text);
             Transport.send(message);
         } catch (MessagingException e) {

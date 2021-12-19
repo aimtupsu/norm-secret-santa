@@ -2,12 +2,12 @@ package com.aimtupsu.normsecretsanta.config;
 
 import com.aimtupsu.normsecretsanta.model.SecretSantaParticipant;
 
-import java.util.List;
+import java.util.Set;
 
-public record SecretSantaConfigPojo(List<SecretSantaParticipant> participants) implements SecretSantaConfig {
+public record SecretSantaConfigPojo(Set<SecretSantaParticipant> participants) implements SecretSantaConfig {
 
     @Override
-    public List<SecretSantaParticipant> getParticipants() {
+    public Set<SecretSantaParticipant> getParticipants() {
         return this.participants;
     }
 }
